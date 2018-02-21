@@ -1,13 +1,13 @@
 package Model;
-public class Notas {
+public class Nota {
     
     private String materia;
     private double nota;
     
-    public Notas (){
+    public Nota (){
         
     }
-    public Notas(String materia, double nota){
+    public Nota(String materia, double nota){
         this.materia = materia;
         this.nota = nota;
     }
