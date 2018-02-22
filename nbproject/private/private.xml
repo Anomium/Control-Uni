@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Melvin/Documents/NetBeansProjects/Control%20Uni/src/Model/Materia.java</file>
-            <file>file:/C:/Users/Melvin/Documents/NetBeansProjects/Control%20Uni/src/View/RegistrodeMaterias.java</file>
+            <file>file:/C:/Users/Melvin/Documents/NetBeansProjects/Control%20Uni/src/Model/DatosProfesor.java</file>
             <file>file:/C:/Users/Melvin/Documents/NetBeansProjects/Control%20Uni/src/View/Inicio.java</file>
-            <file>file:/C:/Users/Melvin/Documents/NetBeansProjects/Control%20Uni/src/Controller/ControlController.java</file>
-            <file>file:/C:/Users/Melvin/Documents/NetBeansProjects/Control%20Uni/src/Model/Nota.java</file>
+            <file>file:/C:/Users/Melvin/Documents/NetBeansProjects/Control%20Uni/src/View/RegistroProfesor.java</file>
         </group>
     </open-files>
 </project-private>
