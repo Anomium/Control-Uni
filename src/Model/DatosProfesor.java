@@ -2,12 +2,12 @@ package Model;
 public class DatosProfesor {
     public String nombre;
     public String correo;
-    public int numeroCel;
+    public String numeroCel;
     
     public DatosProfesor(){
         
     }
-    public DatosProfesor(String nombre, String correo, int numeroCel){
+    public DatosProfesor(String nombre, String correo, String numeroCel){
         this.nombre = nombre;
         this.correo = correo;
         this.numeroCel = numeroCel;
@@ -29,11 +29,11 @@ public class DatosProfesor {
         this.correo = correo;
     }
 
-    public int getNumeroCel() {
+    public String getNumeroCel() {
         return numeroCel;
     }
 
-    public void setNumeroCel(int numeroCel) {
+    public void setNumeroCel(String numeroCel) {
         this.numeroCel = numeroCel;
     }
     
