@@ -135,7 +135,9 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistroProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroProfActionPerformed
-        
+        RegistroProfesor registroprofesor = new RegistroProfesor();
+        registroprofesor.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRegistroProfActionPerformed
 
     private void btnRegistroMatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroMatMouseClicked

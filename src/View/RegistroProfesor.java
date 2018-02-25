@@ -174,6 +174,6 @@ public class RegistroProfesor extends javax.swing.JFrame {
     private javax.swing.JTable jTable;
     private javax.swing.JTextField txtCelProf;
     private javax.swing.JTextField txtCorreoProf;
-    private javax.swing.JTextField txtNombreProf;
+    public javax.swing.JTextField txtNombreProf;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,6 +10,10 @@ public class MateriaController {
     public void Create(Materia mater2) {
         mater.add(mater2);
     }
+    
+    public MateriaController(){
+        this.mater = new ArrayList();
+    }
 
     public void update() {
 
@@ -18,9 +22,17 @@ public class MateriaController {
     public void read() {
 
     }
-
-    public void delete() {
-
+    
+    public boolean Remove(int Index) {
+        boolean V = false;
+        for (int i = 0; i < mater.size(); i++) {
+            if (mater.get(i).getIndex() == Index) {
+                mater.remove(i);
+                V = true;
+                break;
+            }
+        }
+        return V;
     }
 
     public ArrayList<Materia> getMater() {
