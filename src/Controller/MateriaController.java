@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Materia;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class MateriaController {
 
@@ -23,7 +24,7 @@ public class MateriaController {
 
     }
     
-    public boolean Remove(int Index) {
+    public boolean Eliminar(int Index) {
         boolean V = false;
         for (int i = 0; i < mater.size(); i++) {
             if (mater.get(i).getIndex() == Index) {
@@ -32,6 +33,7 @@ public class MateriaController {
                 break;
             }
         }
+        JOptionPane.showMessageDialog(null,"Se ha borrado la materia.");
         return V;
     }
 
@@ -40,23 +42,24 @@ public class MateriaController {
     }
 
     public void ListarTabla(javax.swing.JTable jTable) {
-        Object[][] matriz = new Object[getMater().size()][4];
+        Object[][] matriz = new Object[getMater().size()][5];
 
         for (int i = 0; i < getMater().size(); i++) {
-            matriz[i][0] = getMater().get(i).getNombre_materia();
-            matriz[i][1] = getMater().get(i).getSalon_clases();
-            matriz[i][2] = getMater().get(i).getNombre_materia();
-            matriz[i][3] = getMater().get(i).getHora();
-
+            matriz[i][0] = getMater().get(i).getIndex();
+            matriz[i][1] = getMater().get(i).getNombre_materia();
+            matriz[i][2] = getMater().get(i).getSalon_clases();
+            matriz[i][3] = getMater().get(i).getNombre_materia();
+            matriz[i][4] = getMater().get(i).getHora();
+            
         }
         jTable.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{
-                    "Materia", "Salon de clases", "Profesor/a", "Hora"
+                    "Codigo Clase", "Materia", "Salon de clases", "Profesor/a", "Hora"
                 }
         ) {
             boolean[] canEdit = new boolean[]{
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -69,6 +72,7 @@ public class MateriaController {
             jTable.getColumnModel().getColumn(1).setResizable(false);
             jTable.getColumnModel().getColumn(2).setResizable(false);
             jTable.getColumnModel().getColumn(3).setResizable(false);
+            jTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
     }

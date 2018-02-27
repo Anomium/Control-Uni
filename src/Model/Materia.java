@@ -11,13 +11,21 @@ public class Materia {
         
     }
     public Materia(int Index, String Nombre_materia, String salon_clases, String hora){
+        this.Index = Index;
         this.Nombre_materia = Nombre_materia;
         this.salon_clases = salon_clases;
         this.hora = hora;
-        this.Index = Index;
     }
     
     //SET AND GET
+        public int getIndex() {
+        return Index;
+    }
+
+    public void setIndex(int Index) {
+        this.Index = Index;
+    }
+    
     public String getNombre_materia() {
         return Nombre_materia;
     }
@@ -41,13 +49,4 @@ public class Materia {
     public void setHora(String hora) {
         this.hora = hora;
     }
-
-    public int getIndex() {
-        return Index;
-    }
-
-    public void setIndex(int index) {
-        this.Index = Index;
-    }
-    
 }
