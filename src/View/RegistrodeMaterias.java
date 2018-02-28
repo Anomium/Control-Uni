@@ -225,6 +225,7 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         materco.Eliminar(Integer.parseInt(txtEliminar.getText()));
+        materco.ListarTabla(jTabla);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
 
