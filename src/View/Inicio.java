@@ -1,15 +1,17 @@
 
 package View;
 
-
 public class Inicio extends javax.swing.JFrame {
 
     
     public Inicio() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
+    
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -33,11 +35,6 @@ public class Inicio extends javax.swing.JFrame {
         btnRegistroProf.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRegistroProfMouseClicked(evt);
-            }
-        });
-        btnRegistroProf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistroProfActionPerformed(evt);
             }
         });
 
@@ -133,12 +130,6 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegistroProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroProfActionPerformed
-        RegistroProfesor registroprofesor = new RegistroProfesor();
-        registroprofesor.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnRegistroProfActionPerformed
 
     private void btnRegistroMatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroMatMouseClicked
         RegistrodeMaterias RegistroM = new RegistrodeMaterias();

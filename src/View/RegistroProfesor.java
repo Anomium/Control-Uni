@@ -7,10 +7,12 @@ public class RegistroProfesor extends javax.swing.JFrame {
     public RegistroProfesor() {
         initComponents();
         setLocationRelativeTo(null);
-    }
-    DatosProfController datproco = new DatosProfController();
-    RegistrodeMaterias regmat = new RegistrodeMaterias();
+        datproco.listarTablaDatosProf(jTable);
 
+    }
+    private static Inicio inicio = new Inicio();
+    private static DatosProfController datproco = new DatosProfController();
+    private static RegistrodeMaterias regmat = new RegistrodeMaterias();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -76,9 +78,9 @@ public class RegistroProfesor extends javax.swing.JFrame {
         jButton3.setText("Eliminar");
 
         btnInicio.setText("Inicio");
-        btnInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioActionPerformed(evt);
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInicioMouseClicked(evt);
             }
         });
 
@@ -149,16 +151,15 @@ public class RegistroProfesor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        Inicio inicio = new Inicio();
-        inicio.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnInicioActionPerformed
-
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         datproco.Create(new DatosProfesor(txtNombreProf.getText(), txtCorreoProf.getText(), txtCelProf.getText()));
         datproco.listarTablaDatosProf(jTable);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
+        inicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnInicioMouseClicked
 
 
 

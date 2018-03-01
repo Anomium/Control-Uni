@@ -3,7 +3,7 @@ import Model.DatosProfesor;
 import java.util.ArrayList;
 public class DatosProfController {
     
-    private ArrayList<DatosProfesor> DProf = new ArrayList<DatosProfesor>();
+    private static ArrayList<DatosProfesor> DProf = new ArrayList<DatosProfesor>();
     
     public void Create(DatosProfesor datosprofesor){
         

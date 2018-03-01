@@ -3,9 +3,10 @@ package Controller;
 import Model.Materia;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
+import Controller.DatosProfController;
 public class MateriaController {
-
+    
+    private DatosProfController datosprofcontroller = new DatosProfController();
     private ArrayList<Materia> mater = new ArrayList<Materia>();
 
     public void Create(Materia mater2) {
@@ -48,7 +49,7 @@ public class MateriaController {
             matriz[i][0] = getMater().get(i).getIndex();
             matriz[i][1] = getMater().get(i).getNombre_materia();
             matriz[i][2] = getMater().get(i).getSalon_clases();
-            matriz[i][3] = getMater().get(i).getNombre_materia();
+            matriz[i][3] = datosprofcontroller.DatosProfesors().get(i).getNombre();
             matriz[i][4] = getMater().get(i).getHora();
             
         }
