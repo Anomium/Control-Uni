@@ -6,15 +6,11 @@ import javax.swing.JOptionPane;
 import Controller.DatosProfController;
 public class MateriaController {
     
-    private DatosProfController datosprofcontroller = new DatosProfController();
     private static ArrayList<Materia> materia = new ArrayList<Materia>();
-
+    private DatosProfController datosprofcontroller = new DatosProfController();
+    
     public void Create(Materia mater2) {
         materia.add(mater2);
-    }
-    
-    public MateriaController(){
-        this.materia = new ArrayList();
     }
 
     public void update() {
@@ -38,7 +34,7 @@ public class MateriaController {
         return V;
     }
 
-    public ArrayList<Materia> Materia() {
+    public ArrayList<Materia> Materia(){
         return materia;
     }
 

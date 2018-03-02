@@ -50,12 +50,6 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
 
         jLabel2.setText("Salon de clases:");
 
-        cbProfesor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbProfesorActionPerformed(evt);
-            }
-        });
-
         jLabel4.setText("Profesor/a:");
 
         jLabel5.setText("Hora:");
@@ -101,11 +95,6 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
         btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnInicioMouseClicked(evt);
-            }
-        });
-        btnInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioActionPerformed(evt);
             }
         });
 
@@ -209,10 +198,6 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInicioActionPerformed
-
     private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
         
         inicio.setVisible(true);
@@ -220,13 +205,9 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        materco.Create(new Materia(Integer.parseInt(txtCodigoClase.getText()),txtNomMateria.getText(), txtSalonClases.getText(),(String) cbHora.getSelectedItem()));
+        materco.Create(new Materia(Integer.parseInt(txtCodigoClase.getText()), txtNomMateria.getText(), txtSalonClases.getText(),(String) cbHora.getSelectedItem()));
         materco.ListarTabla(jTabla); 
     }//GEN-LAST:event_btnGuardarActionPerformed
-
-    private void cbProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbProfesorActionPerformed
-       
-    }//GEN-LAST:event_cbProfesorActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         materco.Eliminar(Integer.parseInt(txtEliminar.getText()));

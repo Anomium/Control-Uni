@@ -5,12 +5,13 @@ import Model.Calificacion;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class CalificacionController {
-
+    
     private static ArrayList<Calificacion> notas = new ArrayList<Calificacion>();
     private MateriaController matercot = new MateriaController();
 
     public void Create(Calificacion notasc) {
         notas.add(notasc);
+        
     }
     
     public CalificacionController(){
@@ -46,8 +47,8 @@ public class CalificacionController {
     public void listarTablaCalificaciones(javax.swing.JTable jtCalificaciones) {
         Object[][] matriz = new Object[datosnotas().size()][2];
         for (int i = 0; i < datosnotas().size(); i++) {
-            //matriz[i][0] = matercot.Materia().get(i).getNombre_materia();
-            matriz[i][1] = notas.get(i).getNota();
+            matriz[i][0] = matercot.Materia().get(i).getNombre_materia();
+            matriz[i][1] = datosnotas().get(i).getNota();
         }
 
         jtCalificaciones.setModel(new javax.swing.table.DefaultTableModel(
