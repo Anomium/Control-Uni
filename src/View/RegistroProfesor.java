@@ -12,7 +12,6 @@ public class RegistroProfesor extends javax.swing.JFrame {
     }
     private static Inicio inicio = new Inicio();
     private static DatosProfController datproco = new DatosProfController();
-    private static RegistrodeMaterias regmat = new RegistrodeMaterias();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

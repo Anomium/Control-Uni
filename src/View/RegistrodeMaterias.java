@@ -12,14 +12,14 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
     public RegistrodeMaterias() {
         initComponents();
         setLocationRelativeTo(null);
-        materco.ListarTabla(jTabla); 
+        materco.ListarTabla(jTabla);
+        
         for(DatosProfesor dat : Dat.DatosProfesors()){
             cbProfesor.addItem(dat.getNombre());
         }
     }
     private static Inicio inicio = new Inicio();
     private static MateriaController materco = new MateriaController();
-    private static Materia mat = new Materia();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
