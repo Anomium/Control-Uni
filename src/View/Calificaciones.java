@@ -6,6 +6,7 @@ import Model.Materia;
 public class Calificaciones extends javax.swing.JFrame {
     
     private MateriaController matco = new MateriaController();
+    private static CalificacionController califco = new CalificacionController();
     
     public Calificaciones() {
         initComponents();
@@ -18,7 +19,7 @@ public class Calificaciones extends javax.swing.JFrame {
     }
     
     private Inicio inicio = new Inicio();
-    private CalificacionController califco = new CalificacionController();
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
