@@ -45,10 +45,11 @@ public class MateriaController {
             matriz[i][0] = Materia().get(i).getIndex();
             matriz[i][1] = Materia().get(i).getNombre_materia();
             matriz[i][2] = Materia().get(i).getSalon_clases();
-            matriz[i][3] = datosprofcontroller.DatosProfesors().get(i).getNombre();
+            matriz[i][3] = Materia().get(i).getDprof().getNombre();
             matriz[i][4] = Materia().get(i).getHora();
             
         }
+        
         jTable.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{

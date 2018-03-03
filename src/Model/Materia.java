@@ -1,6 +1,7 @@
 package Model;
 public class Materia {
     
+    private DatosProfesor dprof;
     private String Nombre_materia;
     private String salon_clases;
     private String hora;
@@ -10,7 +11,8 @@ public class Materia {
     public Materia(){
         
     }
-    public Materia(int Index, String Nombre_materia, String salon_clases, String hora){
+    public Materia(int Index, String Nombre_materia, DatosProfesor dprof, String salon_clases, String hora){
+        this.dprof = dprof;
         this.Index = Index;
         this.Nombre_materia = Nombre_materia;
         this.salon_clases = salon_clases;
@@ -49,4 +51,14 @@ public class Materia {
     public void setHora(String hora) {
         this.hora = hora;
     }
+
+    public DatosProfesor getDprof() {
+        return dprof;
+    }
+
+    public void setDprof(DatosProfesor dprof) {
+        this.dprof = dprof;
+    }
+    
+    
 }

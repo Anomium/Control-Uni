@@ -8,7 +8,7 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
 
     
     private DatosProfController Dat = new DatosProfController();
-   
+    
     public RegistrodeMaterias() {
         initComponents();
         setLocationRelativeTo(null);
@@ -205,7 +205,7 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        materco.Create(new Materia(Integer.parseInt(txtCodigoClase.getText()), txtNomMateria.getText(), txtSalonClases.getText(),(String) cbHora.getSelectedItem()));
+        materco.Create(new Materia(Integer.parseInt(txtCodigoClase.getText()), txtNomMateria.getText(),Dat.DatosProfesors().get(cbProfesor.getSelectedIndex()) , txtSalonClases.getText(),(String) cbHora.getSelectedItem()));
         materco.ListarTabla(jTabla); 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
