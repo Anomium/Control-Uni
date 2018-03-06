@@ -47,7 +47,7 @@ public class CalificacionController {
     public void listarTablaCalificaciones(javax.swing.JTable jtCalificaciones) {
         Object[][] matriz = new Object[datosnotas().size()][2];
         for (int i = 0; i < datosnotas().size(); i++) {
-            matriz[i][0] = matercot.Materia().get(i).getNombre_materia();
+            matriz[i][0] = datosnotas().get(i).getMateria().getSalon_clases();
             matriz[i][1] = datosnotas().get(i).getNota();
         }
 

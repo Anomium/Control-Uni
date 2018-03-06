@@ -16,6 +16,7 @@ public class Calificaciones extends javax.swing.JFrame {
         for (Materia mat : matco.Materia()) {
             cbMaterias.addItem(mat.getNombre_materia());
         }
+        
     }
     
     private Inicio inicio = new Inicio();
@@ -155,11 +156,12 @@ public class Calificaciones extends javax.swing.JFrame {
                                     .addComponent(btnEliminar)
                                     .addComponent(btnGuardar))
                                 .addGap(11, 11, 11)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEditar)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(txtCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel2)))
+                                        .addComponent(jLabel2))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnEditar)))
                                 .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cbMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,12 +185,10 @@ public class Calificaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        califco.Create(new Calificacion(Double.parseDouble(txtCalificacion.getText())));
+        califco.Create(new Calificacion(Double.parseDouble(txtCalificacion.getText()), matco.Materia().get(cbMaterias.getSelectedIndex())));
         califco.listarTablaCalificaciones(jtCalificaciones);
         
-        for (Materia mat : matco.Materia()) {
-            cbMaterias.addItem(mat.getNombre_materia());
-        }
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
 
