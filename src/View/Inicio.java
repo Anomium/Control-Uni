@@ -35,16 +35,16 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        btnPromedioView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPromedioViewActionPerformed(evt);
+        btnPromedioView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPromedioViewMouseClicked(evt);
             }
         });
 
         btnCalificaciones.setForeground(new java.awt.Color(255, 255, 255));
-        btnCalificaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalificacionesActionPerformed(evt);
+        btnCalificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCalificacionesMouseClicked(evt);
             }
         });
 
@@ -126,15 +126,18 @@ public class Inicio extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegistroProfMouseClicked
 
-    private void btnCalificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalificacionesActionPerformed
+    private void btnCalificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalificacionesMouseClicked
         Calificaciones calif = new Calificaciones();
         calif.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnCalificacionesActionPerformed
+    }//GEN-LAST:event_btnCalificacionesMouseClicked
 
-    private void btnPromedioViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioViewActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPromedioViewActionPerformed
+    private void btnPromedioViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPromedioViewMouseClicked
+        Promedio promedio = new Promedio();
+        promedio.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_btnPromedioViewMouseClicked
 
 
     public static void main(String args[]) {

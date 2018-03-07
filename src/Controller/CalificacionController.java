@@ -43,6 +43,17 @@ public class CalificacionController {
     public ArrayList<Calificacion> datosnotas() {
         return notas;
     }
+    
+    public double Promedio(){
+        double prom = 0;
+        for (int i = 0; i < datosnotas().size(); i++) {
+           prom = prom + datosnotas().get(i).getNota(); 
+        }
+        prom = prom / datosnotas().size();
+        System.out.println(prom);
+        JOptionPane.showMessageDialog(null, "El Promedio general es: " + prom);
+        return prom;
+    }
 
     public void listarTablaCalificaciones(javax.swing.JTable jtCalificaciones) {
         Object[][] matriz = new Object[datosnotas().size()][2];

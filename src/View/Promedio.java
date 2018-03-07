@@ -1,14 +1,17 @@
 package View;
-
+import Controller.CalificacionController;
+import Model.Calificacion;
 public class Promedio extends javax.swing.JFrame {
 
 
     public Promedio() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
     Inicio inicio = new Inicio();
-
+    CalificacionController calco = new CalificacionController();
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -23,6 +26,11 @@ public class Promedio extends javax.swing.JFrame {
         btnPromedioCalcular.setText("Promedio ");
 
         btnPromedioGeneralCalcular.setText("Promedio General");
+        btnPromedioGeneralCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPromedioGeneralCalcularActionPerformed(evt);
+            }
+        });
 
         btnInicio.setText("Inicio");
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -68,8 +76,12 @@ public class Promedio extends javax.swing.JFrame {
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         inicio.setVisible(true);
-        this.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnInicioActionPerformed
+
+    private void btnPromedioGeneralCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioGeneralCalcularActionPerformed
+        calco.Promedio();
+    }//GEN-LAST:event_btnPromedioGeneralCalcularActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
