@@ -35,6 +35,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        btnPromedioView.setForeground(new java.awt.Color(255, 255, 255));
         btnPromedioView.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPromedioViewMouseClicked(evt);
@@ -133,8 +134,8 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalificacionesMouseClicked
 
     private void btnPromedioViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPromedioViewMouseClicked
-        Promedio promedio = new Promedio();
-        promedio.setVisible(true);
+        Promedio prom = new Promedio();
+        prom.setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_btnPromedioViewMouseClicked

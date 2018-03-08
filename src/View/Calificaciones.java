@@ -5,7 +5,7 @@ import Controller.MateriaController;
 import Model.Materia;
 public class Calificaciones extends javax.swing.JFrame {
     
-    private MateriaController matco = new MateriaController();
+    private static MateriaController matco = new MateriaController();
     private static CalificacionController califco = new CalificacionController();
     
     public Calificaciones() {

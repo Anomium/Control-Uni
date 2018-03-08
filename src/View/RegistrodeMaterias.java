@@ -7,7 +7,7 @@ import Controller.DatosProfController;
 public class RegistrodeMaterias extends javax.swing.JFrame {
 
     
-    private DatosProfController Dat = new DatosProfController();
+    private static DatosProfController Dat = new DatosProfController();
     
     public RegistrodeMaterias() {
         initComponents();

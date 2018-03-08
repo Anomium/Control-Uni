@@ -1,6 +1,5 @@
 package View;
-import Controller.CalificacionController;
-import Model.Calificacion;
+
 public class Promedio extends javax.swing.JFrame {
 
 
@@ -8,86 +7,59 @@ public class Promedio extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-    
-    Inicio inicio = new Inicio();
-    CalificacionController calco = new CalificacionController();
-    
+    private static Inicio inicio = new Inicio();
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        btnPromedioCalcular = new javax.swing.JButton();
-        btnPromedioGeneralCalcular = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
+        btnPromedioG = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnPromedioCalcular.setText("Promedio ");
-
-        btnPromedioGeneralCalcular.setText("Promedio General");
-        btnPromedioGeneralCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPromedioGeneralCalcularActionPerformed(evt);
-            }
-        });
-
         btnInicio.setText("Inicio");
-        btnInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioActionPerformed(evt);
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInicioMouseClicked(evt);
             }
         });
+
+        btnPromedioG.setText("Promedio General");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(222, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnInicio)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(32, 32, 32)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(65, 65, 65)
-                            .addComponent(btnPromedioCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(64, 64, 64)
-                            .addComponent(btnPromedioGeneralCalcular))))
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addComponent(btnPromedioG)
+                    .addComponent(btnInicio))
+                .addGap(59, 59, 59))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnPromedioCalcular)
-                        .addComponent(btnPromedioGeneralCalcular))
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addComponent(btnPromedioG)
+                .addGap(68, 68, 68)
                 .addComponent(btnInicio)
-                .addGap(48, 48, 48))
+                .addGap(112, 112, 112))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
         inicio.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnInicioActionPerformed
+    }//GEN-LAST:event_btnInicioMouseClicked
 
-    private void btnPromedioGeneralCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioGeneralCalcularActionPerformed
-        calco.Promedio();
-    }//GEN-LAST:event_btnPromedioGeneralCalcularActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicio;
-    private javax.swing.JButton btnPromedioCalcular;
-    private javax.swing.JButton btnPromedioGeneralCalcular;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnPromedioG;
     // End of variables declaration//GEN-END:variables
 }

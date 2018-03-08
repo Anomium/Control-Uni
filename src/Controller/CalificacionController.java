@@ -46,10 +46,13 @@ public class CalificacionController {
     
     public double Promedio(){
         double prom = 0;
-        for (int i = 0; i < datosnotas().size(); i++) {
-           prom = prom + datosnotas().get(i).getNota(); 
+        int cont = 0;
+        for (int i = 0; i < notas.size(); i++) {
+           prom = prom + notas.get(i).getNota();
+           cont += 1;
         }
-        prom = prom / datosnotas().size();
+        
+        prom = prom / cont;
         System.out.println(prom);
         JOptionPane.showMessageDialog(null, "El Promedio general es: " + prom);
         return prom;
@@ -58,7 +61,7 @@ public class CalificacionController {
     public void listarTablaCalificaciones(javax.swing.JTable jtCalificaciones) {
         Object[][] matriz = new Object[datosnotas().size()][2];
         for (int i = 0; i < datosnotas().size(); i++) {
-            matriz[i][0] = datosnotas().get(i).getMateria().getSalon_clases();
+            matriz[i][0] = datosnotas().get(i).getMateria().getNombre_materia();
             matriz[i][1] = datosnotas().get(i).getNota();
         }
 
