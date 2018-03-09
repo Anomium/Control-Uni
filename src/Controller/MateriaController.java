@@ -21,17 +21,8 @@ public class MateriaController {
 
     }
     
-    public boolean Eliminar(int Index) {
-        boolean V = false;
-        for (int i = 0; i < materia.size(); i++) {
-            if (materia.get(i).getIndex() == Index) {
-                materia.remove(i);
-                V = true;
-                break;
-            }
-        }
-        JOptionPane.showMessageDialog(null,"Se ha borrado la materia.");
-        return V;
+    public void Eliminar(int Index) {
+        materia.remove(Index);
     }
 
     public ArrayList<Materia> Materia(){

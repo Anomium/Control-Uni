@@ -1,6 +1,5 @@
 package View;
 import Controller.CalificacionController;
-import Model.PromedioM;
 public class Promedio extends javax.swing.JFrame {
 
     private static Inicio inicio = new Inicio();

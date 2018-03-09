@@ -8,7 +8,7 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
 
     
     private static DatosProfController Dat = new DatosProfController();
-    
+    int index_editMateria;
     public RegistrodeMaterias() {
         initComponents();
         setLocationRelativeTo(null);
@@ -43,7 +43,7 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
         txtCodigoClase = new javax.swing.JTextField();
         btnEliminar = new javax.swing.JButton();
         txtEliminar = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,7 +113,12 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Editar");
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,8 +164,8 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
                                 .addComponent(btnGuardar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEditar)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(45, Short.MAX_VALUE)
@@ -185,7 +190,7 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnGuardar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(btnEditar)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
@@ -219,29 +224,36 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         materco.Create(new Materia(Integer.parseInt(txtCodigoClase.getText()), txtNomMateria.getText(),Dat.DatosProfesors().get(cbProfesor.getSelectedIndex()) , txtSalonClases.getText(),(String) cbHora.getSelectedItem()));
-        materco.ListarTabla(jTabla); 
+        materco.ListarTabla(jTabla);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        materco.Eliminar(Integer.parseInt(txtEliminar.getText()));
+        materco.Eliminar(index_editMateria);
         materco.ListarTabla(jTabla);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void EditMaterias_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditMaterias_tbl
-        int index = jTabla.getSelectedRow();
-        System.out.println();
-        txtEliminar.setText(materco.Materia().get(index).getNombre_materia());
+        this.index_editMateria = jTabla.getSelectedRow();
+        txtEliminar.setText(materco.Materia().get(index_editMateria).getNombre_materia());
     }//GEN-LAST:event_EditMaterias_tbl
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        this.index_editMateria = jTabla.getSelectedRow();
+
+        materco.Materia().get(index_editMateria).setNombre_materia(txtNomMateria.getText());
+        materco.Materia().get(index_editMateria).setSalon_clases(txtSalonClases.getText());
+        materco.ListarTabla(jTabla);
+    }//GEN-LAST:event_btnEditarActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnInicio;
     private javax.swing.JComboBox<String> cbHora;
     public javax.swing.JComboBox<String> cbProfesor;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
