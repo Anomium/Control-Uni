@@ -2,10 +2,11 @@ package View;
 
 public class Inicio extends javax.swing.JFrame {
 
-    
+    Promedio prom = new Promedio();
     public Inicio() {
         initComponents();
-        setLocationRelativeTo(null);  
+        setLocationRelativeTo(null);
+        prom.setVisible(false);
     }
     
     @SuppressWarnings("unchecked")
@@ -134,7 +135,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalificacionesMouseClicked
 
     private void btnPromedioViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPromedioViewMouseClicked
-        Promedio prom = new Promedio();
+        
         prom.setVisible(true);
         this.dispose();
         

@@ -7,11 +7,9 @@ import javax.swing.JOptionPane;
 public class CalificacionController {
     
     private static ArrayList<Calificacion> notas = new ArrayList<Calificacion>();
-    private static MateriaController matercot = new MateriaController();
 
     public void Create(Calificacion notasc) {
         notas.add(notasc);
-        
     }
     
     public CalificacionController(){

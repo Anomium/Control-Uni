@@ -75,6 +75,11 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EditMaterias_tbl(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTabla);
         if (jTabla.getColumnModel().getColumnCount() > 0) {
             jTabla.getColumnModel().getColumn(0).setResizable(false);
@@ -213,6 +218,10 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
         materco.Eliminar(Integer.parseInt(txtEliminar.getText()));
         materco.ListarTabla(jTabla);
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void EditMaterias_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditMaterias_tbl
+        System.out.println("asd");
+    }//GEN-LAST:event_EditMaterias_tbl
 
 
 

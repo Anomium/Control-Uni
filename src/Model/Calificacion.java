@@ -10,6 +10,9 @@ public class Calificacion {
         this.materia = materia;
         this.nota = nota;
     }
+    public Calificacion(double nota){
+        this.nota = nota;
+    }
     
     public void setNota(double nota){
         this.nota = nota;

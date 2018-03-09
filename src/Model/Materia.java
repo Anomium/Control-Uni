@@ -1,5 +1,5 @@
 package Model;
-public class Materia {
+public class Materia{
     
     private DatosProfesor dprof;
     private String Nombre_materia;

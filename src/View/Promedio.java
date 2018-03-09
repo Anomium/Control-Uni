@@ -1,14 +1,16 @@
 package View;
-
+import Controller.CalificacionController;
+import Model.PromedioM;
 public class Promedio extends javax.swing.JFrame {
 
-
+    private static Inicio inicio = new Inicio();
+    private static CalificacionController califcon = new CalificacionController();
+    
     public Promedio() {
         initComponents();
         setLocationRelativeTo(null);
     }
-    private static Inicio inicio = new Inicio();
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -26,6 +28,11 @@ public class Promedio extends javax.swing.JFrame {
         });
 
         btnPromedioG.setText("Promedio General");
+        btnPromedioG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPromedioGActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,7 +63,9 @@ public class Promedio extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnInicioMouseClicked
 
-
+    private void btnPromedioGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioGActionPerformed
+        califcon.Promedio();
+    }//GEN-LAST:event_btnPromedioGActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicio;

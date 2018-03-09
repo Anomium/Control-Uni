@@ -19,7 +19,7 @@ public class Calificaciones extends javax.swing.JFrame {
         
     }
     
-    private Inicio inicio = new Inicio();
+    private static Inicio inicio = new Inicio();
     
     
     @SuppressWarnings("unchecked")
