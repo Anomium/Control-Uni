@@ -19,8 +19,9 @@ public class DatosProfController {
 
     }
 
-    public void delete() {
-
+    public void Eliminar(int Index, javax.swing.JTable jTable) {
+        DProf.remove(Index);
+        listarTablaDatosProf(jTable);
     }
     
     public ArrayList<DatosProfesor> DatosProfesors(){

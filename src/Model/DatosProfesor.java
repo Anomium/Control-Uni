@@ -35,7 +35,5 @@ public class DatosProfesor {
 
     public void setNumeroCel(String numeroCel) {
         this.numeroCel = numeroCel;
-    }
-    
-    
+    }   
 }

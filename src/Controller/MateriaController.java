@@ -21,8 +21,9 @@ public class MateriaController {
 
     }
     
-    public void Eliminar(int Index) {
+    public void Eliminar(int Index, javax.swing.JTable jTable) {
         materia.remove(Index);
+        ListarTabla(jTable);
     }
 
     public ArrayList<Materia> Materia(){

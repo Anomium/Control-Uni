@@ -7,7 +7,7 @@ public class Calificaciones extends javax.swing.JFrame {
     
     private static MateriaController matco = new MateriaController();
     private static CalificacionController califco = new CalificacionController();
-    
+    int index_calificaciones;
     public Calificaciones() {
         initComponents();
         setLocationRelativeTo(null);
@@ -74,6 +74,11 @@ public class Calificaciones extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtCalificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtCalificacionesMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jtCalificaciones);
         if (jtCalificaciones.getColumnModel().getColumnCount() > 0) {
             jtCalificaciones.getColumnModel().getColumn(0).setResizable(false);
@@ -88,8 +93,18 @@ public class Calificaciones extends javax.swing.JFrame {
         });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnInicio.setText("Inicio");
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -160,8 +175,7 @@ public class Calificaciones extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(txtCalificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel2))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnEditar)))
+                                    .addComponent(btnEditar))
                                 .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cbMaterias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,6 +204,18 @@ public class Calificaciones extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void jtCalificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCalificacionesMouseClicked
+        this.index_calificaciones = jtCalificaciones.getSelectedRow();
+    }//GEN-LAST:event_jtCalificacionesMouseClicked
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        califco.delete(index_calificaciones, jtCalificaciones);
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

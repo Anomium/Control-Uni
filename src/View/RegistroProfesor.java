@@ -4,6 +4,7 @@ import Model.DatosProfesor;
 public class RegistroProfesor extends javax.swing.JFrame {
 
     private static DatosProfController datproco = new DatosProfController();
+    int index_regprof;
     public RegistroProfesor() {
         initComponents();
         setLocationRelativeTo(null);
@@ -26,8 +27,8 @@ public class RegistroProfesor extends javax.swing.JFrame {
         txtCorreoProf = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtCelProf = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,6 +60,11 @@ public class RegistroProfesor extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable);
         if (jTable.getColumnModel().getColumnCount() > 0) {
             jTable.getColumnModel().getColumn(0).setResizable(false);
@@ -72,9 +78,19 @@ public class RegistroProfesor extends javax.swing.JFrame {
 
         jLabel3.setText("Cel / telf:");
 
-        jButton2.setText("Editar");
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Eliminar");
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnInicio.setText("Inicio");
         btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -109,8 +125,8 @@ public class RegistroProfesor extends javax.swing.JFrame {
                                 .addComponent(txtNombreProf)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -137,9 +153,9 @@ public class RegistroProfesor extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(txtCelProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(btnEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
+                        .addComponent(btnEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnInicio)))
                 .addGap(19, 19, 19)
@@ -160,13 +176,30 @@ public class RegistroProfesor extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnInicioMouseClicked
 
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        datproco.Eliminar(index_regprof, jTable);
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+        this.index_regprof = jTable.getSelectedRow();
+    }//GEN-LAST:event_jTableMouseClicked
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        this.index_regprof = jTable.getSelectedRow();
+        
+        datproco.DatosProfesors().get(index_regprof).setNombre(txtNombreProf.getText());
+        datproco.DatosProfesors().get(index_regprof).setCorreo(txtCorreoProf.getText());
+        datproco.DatosProfesors().get(index_regprof).setNumeroCel(txtCelProf.getText());
+        datproco.listarTablaDatosProf(jTable);
+    }//GEN-LAST:event_btnEditarActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnInicio;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

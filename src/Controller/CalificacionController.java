@@ -24,18 +24,9 @@ public class CalificacionController {
 
     }
 
-    public boolean delete(int notab) {
-        boolean V = false;
-        notab = 0;
-        for (int i = 0; i < notas.size(); i++) {
-            if (notas.get(i).getNota() == notab) {
-                notas.remove(i);
-                V = true;
-                break;
-            }
-        }
-        JOptionPane.showMessageDialog(null, "Se ha borrado la materia.");
-        return V;
+    public void delete(int index, javax.swing.JTable jtCalificaciones) {
+        notas.remove(index);
+        listarTablaCalificaciones(jtCalificaciones);
     }
 
     public ArrayList<Calificacion> datosnotas() {
