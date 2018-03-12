@@ -3,17 +3,20 @@ import Controller.CalificacionController;
 import Model.Calificacion;
 import Controller.MateriaController;
 import Model.Materia;
+import java.util.ArrayList;
 public class Calificaciones extends javax.swing.JFrame {
     
     private static MateriaController matco = new MateriaController();
     private static CalificacionController califco = new CalificacionController();
     int index_calificaciones;
+    private ArrayList<Materia> ArrayMat = new ArrayList<Materia>();
     public Calificaciones() {
         initComponents();
         setLocationRelativeTo(null);
         califco.listarTablaCalificaciones(jtCalificaciones);
-        
+
         for (Materia mat : matco.Materia()) {
+            ArrayMat.add(mat);
             cbMaterias.addItem(mat.getNombre_materia());
         }
         
@@ -210,7 +213,11 @@ public class Calificaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jtCalificacionesMouseClicked
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-
+        this.index_calificaciones = jtCalificaciones.getSelectedRow();
+        
+        califco.datosnotas().get(index_calificaciones).setNota(Double.parseDouble(txtCalificacion.getText()));
+        califco.datosnotas().get(index_calificaciones).setMateria(ArrayMat.get(cbMaterias.getSelectedIndex()));
+        califco.listarTablaCalificaciones(jtCalificaciones);
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
