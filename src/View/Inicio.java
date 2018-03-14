@@ -1,14 +1,19 @@
 package View;
 
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+
 public class Inicio extends javax.swing.JFrame {
 
     Promedio prom = new Promedio();
+
     public Inicio() {
         initComponents();
         setLocationRelativeTo(null);
         prom.setVisible(false);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -119,7 +124,7 @@ public class Inicio extends javax.swing.JFrame {
         RegistrodeMaterias RegistroM = new RegistrodeMaterias();
         RegistroM.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_btnRegistroMatMouseClicked
 
     private void btnRegistroProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroProfMouseClicked
@@ -135,12 +140,11 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalificacionesMouseClicked
 
     private void btnPromedioViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPromedioViewMouseClicked
-        
+
         prom.setVisible(true);
         this.dispose();
-        
-    }//GEN-LAST:event_btnPromedioViewMouseClicked
 
+    }//GEN-LAST:event_btnPromedioViewMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -150,7 +154,7 @@ public class Inicio extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -170,6 +174,12 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                try {
+
+                    UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 new Inicio().setVisible(true);
             }
         });
