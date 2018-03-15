@@ -33,6 +33,19 @@ public class CalificacionController {
         return notas;
     }
     
+    public void PreomedioMat(String materia){
+        double promMat = 0;
+        int cont = 0;
+        for (int i = 0; i < notas.size(); i++) {
+            if (notas.get(i).getMateria().getNombre_materia() == materia) {
+                promMat = promMat + notas.get(i).getNota();
+                cont++;
+            }
+        }
+        promMat = promMat / cont;
+        JOptionPane.showMessageDialog(null,"La el promedio de la materia " + materia + " es: " + promMat);
+    }
+    
     public double Promedio(){
         double prom = 0;
         int cont = 0;

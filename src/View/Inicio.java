@@ -174,12 +174,6 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-
-                    UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
                 new Inicio().setVisible(true);
             }
         });
