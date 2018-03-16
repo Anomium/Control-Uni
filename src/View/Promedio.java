@@ -13,9 +13,8 @@ public class Promedio extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        for (Materia mat : matco.Materia()) {
-            ArrayMat.add(mat);
-            cbMateriaPro.addItem(mat.getNombre_materia());
+        for (int i = 0; i < matco.Materia().size(); i++) {
+            cbMateriaPro.addItem(matco.Materia().get(i).getNombre_materia());
         }
     }
     private static Inicio inicio = new Inicio();
