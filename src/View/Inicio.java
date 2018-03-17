@@ -6,12 +6,12 @@ import javax.swing.UIManager;
 
 public class Inicio extends javax.swing.JFrame {
 
-    Promedio prom = new Promedio();
+
 
     public Inicio() {
         initComponents();
         setLocationRelativeTo(null);
-        prom.setVisible(false);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -20,12 +20,10 @@ public class Inicio extends javax.swing.JFrame {
 
         btnRegistroProf = new javax.swing.JButton();
         btnRegistroMat = new javax.swing.JButton();
-        btnPromedioView = new javax.swing.JButton();
         btnCalificaciones = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,13 +39,6 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        btnPromedioView.setForeground(new java.awt.Color(255, 255, 255));
-        btnPromedioView.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPromedioViewMouseClicked(evt);
-            }
-        });
-
         btnCalificaciones.setForeground(new java.awt.Color(255, 255, 255));
         btnCalificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -60,8 +51,6 @@ public class Inicio extends javax.swing.JFrame {
         jLabel2.setText("Registro de Profesores");
 
         jLabel5.setText("Calificaciones");
-
-        jLabel6.setText("Promedio");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,27 +72,19 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCalificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnPromedioView, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel6)))
+                    .addComponent(jLabel5))
                 .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCalificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addComponent(jLabel5)))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPromedioView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnCalificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(55, 55, 55)
+                            .addComponent(jLabel5)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRegistroMat, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -111,9 +92,7 @@ public class Inicio extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnRegistroProf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel6))
+                .addComponent(jLabel2)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -138,13 +117,6 @@ public class Inicio extends javax.swing.JFrame {
         calif.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCalificacionesMouseClicked
-
-    private void btnPromedioViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPromedioViewMouseClicked
-
-        prom.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_btnPromedioViewMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -181,12 +153,10 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalificaciones;
-    private javax.swing.JButton btnPromedioView;
     private javax.swing.JButton btnRegistroMat;
     private javax.swing.JButton btnRegistroProf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

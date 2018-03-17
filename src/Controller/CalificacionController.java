@@ -2,6 +2,7 @@ package Controller;
 
 import Controller.MateriaController;
 import Model.Calificacion;
+import java.awt.PopupMenu;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class CalificacionController {
@@ -31,6 +32,13 @@ public class CalificacionController {
 
     public ArrayList<Calificacion> datosnotas() {
         return notas;
+    }
+    
+    public void ListarCB(MateriaController materico){
+        for (int i = 0; i < 10; i++) {
+            materico.Materia().get(i).getNombre_materia();
+        }
+        
     }
     
     public void PreomedioMat(String materia){
@@ -90,5 +98,5 @@ public class CalificacionController {
         }
 
     }
-    
+   
 }

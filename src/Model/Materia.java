@@ -18,6 +18,9 @@ public class Materia{
         this.salon_clases = salon_clases;
         this.hora = hora;
     }
+    public Materia(String Nombre_materia){
+        this.Nombre_materia = Nombre_materia;
+    }
     
     //SET AND GET
         public int getIndex() {
