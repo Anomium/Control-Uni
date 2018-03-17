@@ -13,6 +13,7 @@ public class Inicio extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -148,7 +149,7 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                new Presentacion().setVisible(true);
             }
         });
     }
