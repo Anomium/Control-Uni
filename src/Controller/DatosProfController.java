@@ -5,13 +5,14 @@ public class DatosProfController {
     
     private static ArrayList<DatosProfesor> DProf = new ArrayList<DatosProfesor>();
     
-    public void Create(DatosProfesor datosprofesor){ 
-        DProf.add(datosprofesor);  
+    public void Create(DatosProfesor datosprofesor, javax.swing.JTable jTable){ 
+        DProf.add(datosprofesor);
+        listarTablaDatosProf(jTable);
     }
     
-    public void update(DatosProfesor datprof, int index, javax.swing.JTable jTable) {
+    public void update(DatosProfesor datprof, int index, javax.swing.JTable jTable1) {
         DProf.set(index, datprof);
-        listarTablaDatosProf(jTable);
+        listarTablaDatosProf(jTable1);
     }
 
     public void read() {
@@ -27,14 +28,14 @@ public class DatosProfController {
         return DProf;
     }    
 
-    public void listarTablaDatosProf(javax.swing.JTable jTable){
+    public void listarTablaDatosProf(javax.swing.JTable jTable1){
         Object[][] matriz = new Object[DatosProfesors().size()][3];
         for (int q = 0; q < DatosProfesors().size(); q++) {
             matriz[q][0] = DatosProfesors().get(q).getNombre();
             matriz[q][1] = DatosProfesors().get(q).getCorreo();
             matriz[q][2] = DatosProfesors().get(q).getNumeroCel();
         }
-        jTable.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 
             matriz,
             new String [] {
@@ -51,10 +52,10 @@ public class DatosProfController {
         });
 
 
-        if (jTable.getColumnModel().getColumnCount() > 0) {
-            jTable.getColumnModel().getColumn(0).setResizable(false);
-            jTable.getColumnModel().getColumn(1).setResizable(false);
-            jTable.getColumnModel().getColumn(2).setResizable(false);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
         }
 
     }

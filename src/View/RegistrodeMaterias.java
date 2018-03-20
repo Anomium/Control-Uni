@@ -223,7 +223,7 @@ public class RegistrodeMaterias extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicio1MouseClicked
 
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
-        materco.Create(new Materia(Integer.parseInt(txtCodigoClase.getText()), txtNomMateria.getText(),Dat.DatosProfesors().get(cbProfesor.getSelectedIndex()) , txtSalonClases.getText(),(String) cbHora.getSelectedItem()));
+        
         materco.ListarTabla(jTabla3);
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 

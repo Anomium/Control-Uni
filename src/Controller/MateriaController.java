@@ -9,28 +9,30 @@ public class MateriaController {
     private static ArrayList<Materia> materia = new ArrayList<Materia>();
     private DatosProfController datosprofcontroller = new DatosProfController();
     
-    public void Create(Materia mater2) {
+    public void Create(Materia mater2, javax.swing.JTable jTable2) {
         materia.add(mater2);
+        ListarTabla(jTable2);
     }
 
-    public void update() {
-
+    public void update(Materia mat, int index, javax.swing.JTable jTable) {
+        materia.set(index, mat);
+        ListarTabla(jTable);
     }
 
     public void read() {
 
     }
     
-    public void Eliminar(int Index, javax.swing.JTable jTable) {
+    public void Eliminar(int Index, javax.swing.JTable jTable2) {
         materia.remove(Index);
-        ListarTabla(jTable);
+        ListarTabla(jTable2);
     }
 
     public ArrayList<Materia> Materia(){
         return materia;
     }
 
-    public void ListarTabla(javax.swing.JTable jTable) {
+    public void ListarTabla(javax.swing.JTable jTable2) {
         Object[][] matriz = new Object[Materia().size()][5];
 
         for (int i = 0; i < Materia().size(); i++) {
@@ -42,7 +44,7 @@ public class MateriaController {
             
         }
         
-        jTable.setModel(new javax.swing.table.DefaultTableModel(
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{
                     "Codigo Clase", "Materia", "Salon de clases", "Profesor/a", "Hora"
@@ -57,12 +59,12 @@ public class MateriaController {
             }
         });
 
-        if (jTable.getColumnModel().getColumnCount() > 0) {
-            jTable.getColumnModel().getColumn(0).setResizable(false);
-            jTable.getColumnModel().getColumn(1).setResizable(false);
-            jTable.getColumnModel().getColumn(2).setResizable(false);
-            jTable.getColumnModel().getColumn(3).setResizable(false);
-            jTable.getColumnModel().getColumn(4).setResizable(false);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
+            jTable2.getColumnModel().getColumn(1).setResizable(false);
+            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(3).setResizable(false);
+            jTable2.getColumnModel().getColumn(4).setResizable(false);
         }
 
     }
