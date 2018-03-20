@@ -101,6 +101,8 @@ public class Calificaciones extends javax.swing.JFrame {
             jtCalificaciones.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        txtCalificacion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+
         cbMaterias.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         btnGuardar.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -283,7 +285,7 @@ public class Calificaciones extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();

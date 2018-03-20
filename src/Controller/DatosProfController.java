@@ -5,18 +5,17 @@ public class DatosProfController {
     
     private static ArrayList<DatosProfesor> DProf = new ArrayList<DatosProfesor>();
     
-    public void Create(DatosProfesor datosprofesor){
-        
-        DProf.add(datosprofesor);
-        
+    public void Create(DatosProfesor datosprofesor){ 
+        DProf.add(datosprofesor);  
     }
     
-    public void update() {
-
+    public void update(DatosProfesor datprof, int index, javax.swing.JTable jTable) {
+        DProf.set(index, datprof);
+        listarTablaDatosProf(jTable);
     }
 
     public void read() {
-
+        
     }
 
     public void Eliminar(int Index, javax.swing.JTable jTable) {
