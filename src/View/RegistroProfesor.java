@@ -14,10 +14,8 @@ public class RegistroProfesor extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         datproco.listarTablaDatosProf(jTable);
+        matco.ListarTabla(jTable2);
         
-        for(DatosProfesor dat : datproco.DatosProfesors()){
-            cbProfesorRegMat.addItem(dat.getNombre());
-        }
     }
     private static Inicio inicio = new Inicio();
     
@@ -77,6 +75,11 @@ public class RegistroProfesor extends javax.swing.JFrame {
         setResizable(false);
 
         jTabbedPane1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         btnGuardarRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnGuardarRegProf.setText("Guardar");
@@ -440,6 +443,13 @@ public class RegistroProfesor extends javax.swing.JFrame {
     private void btnEliminarRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarRegMatActionPerformed
         matco.Eliminar(index_regmat, jTable2);
     }//GEN-LAST:event_btnEliminarRegMatActionPerformed
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        cbProfesorRegMat.removeAllItems();
+        for(DatosProfesor dat : datproco.DatosProfesors()){
+            cbProfesorRegMat.addItem(dat.getNombre());
+        }
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
 
 
 
