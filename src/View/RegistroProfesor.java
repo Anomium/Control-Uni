@@ -15,6 +15,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("../Imagenes/logo3D.png")).getImage());
+        setTitle("Registro de Profesor");
         datproco.listarTablaDatosProf(jTable);
         matco.ListarTabla(jTable2);
         
@@ -151,6 +152,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable.getTableHeader().setReorderingAllowed(false);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableMouseClicked(evt);
@@ -283,6 +285,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable2.getTableHeader().setReorderingAllowed(false);
         jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable2MouseClicked(evt);

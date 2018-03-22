@@ -16,6 +16,7 @@ public class Calificaciones extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("../Imagenes/logo3D.png")).getImage());
         califco.listarTablaCalificaciones(jtCalificaciones);
+        setTitle("Calificaciones");
 
         for (Materia mat : matco.Materia()) {
             ArrayMat.add(mat);
@@ -92,6 +93,7 @@ public class Calificaciones extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtCalificaciones.getTableHeader().setReorderingAllowed(false);
         jtCalificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtCalificacionesMouseClicked(evt);
