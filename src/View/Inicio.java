@@ -8,8 +8,6 @@ public class Inicio extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setIconImage(new ImageIcon(getClass().getResource("../Imagenes/logo3D.png")).getImage());
-        
-        
     }
     
     @SuppressWarnings("unchecked")

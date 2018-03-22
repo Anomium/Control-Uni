@@ -15,8 +15,8 @@ public class DatosProfController {
         listarTablaDatosProf(jTable1);
     }
 
-    public void read() {
-        
+    public DatosProfesor read(int index) {
+        return DProf.get(index);
     }
 
     public void Eliminar(int Index, javax.swing.JTable jTable) {

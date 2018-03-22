@@ -19,8 +19,8 @@ public class MateriaController {
         ListarTabla(jTable);
     }
 
-    public void read() {
-
+    public Materia read(int index) {
+        return materia.get(index);
     }
     
     public void Eliminar(int Index, javax.swing.JTable jTable2) {
