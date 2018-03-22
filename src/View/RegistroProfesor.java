@@ -3,6 +3,7 @@ import Controller.DatosProfController;
 import Model.DatosProfesor;
 import Controller.MateriaController;
 import Model.Materia;
+import javax.swing.ImageIcon;
 public class RegistroProfesor extends javax.swing.JFrame {
     
 
@@ -13,6 +14,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
     public RegistroProfesor() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../Imagenes/logo3D.png")).getImage());
         datproco.listarTablaDatosProf(jTable);
         matco.ListarTabla(jTable2);
         

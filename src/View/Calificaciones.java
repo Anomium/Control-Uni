@@ -4,6 +4,7 @@ import Model.Calificacion;
 import Controller.MateriaController;
 import Model.Materia;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 public class Calificaciones extends javax.swing.JFrame {
     
     private static MateriaController matco = new MateriaController();
@@ -13,6 +14,7 @@ public class Calificaciones extends javax.swing.JFrame {
     public Calificaciones() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../Imagenes/logo3D.png")).getImage());
         califco.listarTablaCalificaciones(jtCalificaciones);
 
         for (Materia mat : matco.Materia()) {

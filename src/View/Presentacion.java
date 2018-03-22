@@ -3,6 +3,7 @@ package View;
 import Controller.cargar;
 import com.sun.awt.AWTUtilities;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 public class Presentacion extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;
@@ -11,6 +12,7 @@ public class Presentacion extends javax.swing.JFrame {
         Presentacion.this.setUndecorated(true); // ocultar barra de titulo
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../Imagenes/logo3D.png")).getImage());
         Presentacion.this.setBackground(new Color(0,0,0,0)); //quitar el fondo
         hilo = new cargar(pbProgreso);
         hilo.start();

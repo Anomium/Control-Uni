@@ -1,10 +1,5 @@
 package View;
-
-import java.awt.Dimension;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.UIManager;
-
+import javax.swing.ImageIcon;
 public class Inicio extends javax.swing.JFrame {
 
 
@@ -12,6 +7,7 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("../Imagenes/logo3D.png")).getImage());
         
         
     }
