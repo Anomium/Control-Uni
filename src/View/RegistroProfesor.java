@@ -6,7 +6,7 @@ import Model.Materia;
 import javax.swing.ImageIcon;
 public class RegistroProfesor extends javax.swing.JFrame {
     
-
+    Inicio inicio = new Inicio();
     private static MateriaController matco = new MateriaController();
     private static DatosProfController datproco = new DatosProfController();
     int index_regprof;
@@ -20,7 +20,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
         matco.ListarTabla(jTable2);
         
     }
-    private static Inicio inicio = new Inicio();
+    
     
 
     @SuppressWarnings("unchecked")
@@ -116,9 +116,9 @@ public class RegistroProfesor extends javax.swing.JFrame {
 
         btnInicioRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnInicioRegProf.setText("Inicio");
-        btnInicioRegProf.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnInicioRegProfMouseClicked(evt);
+        btnInicioRegProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioRegProfActionPerformed(evt);
             }
         });
 
@@ -430,12 +430,13 @@ public class RegistroProfesor extends javax.swing.JFrame {
                             .addComponent(cbProfesorRegMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addGap(17, 17, 17)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(cbHoraRegMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel10)
-                                .addComponent(cbHoraRegMat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cbHoraRegMat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7)
+                                .addComponent(cbHoraRegMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(31, 31, 31))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnGuardarRegMat)
@@ -477,11 +478,6 @@ public class RegistroProfesor extends javax.swing.JFrame {
         txtCelProf.setText(datproco.read(index_regprof).getNumeroCel());
     }//GEN-LAST:event_jTableMouseClicked
 
-    private void btnInicioRegProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioRegProfMouseClicked
-        inicio.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnInicioRegProfMouseClicked
-
     private void btnEliminarRegProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarRegProfActionPerformed
         datproco.Eliminar(index_regprof, jTable);
     }//GEN-LAST:event_btnEliminarRegProfActionPerformed
@@ -509,6 +505,9 @@ public class RegistroProfesor extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void btnInicioRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioRegMatActionPerformed
+        inicio.btnCalificaciones.setEnabled(true);
+        inicio.btnRegistroProf.setEnabled(true);
+        inicio.deshabilitBien(false);
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnInicioRegMatActionPerformed
@@ -527,6 +526,14 @@ public class RegistroProfesor extends javax.swing.JFrame {
             cbProfesorRegMat.addItem(dat.getNombre());
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void btnInicioRegProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioRegProfActionPerformed
+        inicio.btnCalificaciones.setEnabled(true);
+        inicio.btnRegistroProf.setEnabled(true);
+        inicio.deshabilitBien(false);
+        inicio.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnInicioRegProfActionPerformed
 
     public int tama(){
         int tam = cbProfesorRegMat.getItemCount();

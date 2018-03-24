@@ -27,7 +27,6 @@ public class Inicio extends javax.swing.JFrame {
         btnRegistroProf = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtCorte1 = new javax.swing.JTextField();
@@ -45,25 +44,30 @@ public class Inicio extends javax.swing.JFrame {
         setResizable(false);
 
         jTabbedPane1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        btnCalificaciones.setForeground(new java.awt.Color(255, 255, 255));
-        btnCalificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCalificacionesMouseClicked(evt);
+                jTabbedPane1MouseClicked(evt);
             }
         });
 
-        btnRegistroProf.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegistroProfMouseClicked(evt);
+        btnCalificaciones.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalificaciones.setEnabled(false);
+        btnCalificaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalificacionesActionPerformed(evt);
+            }
+        });
+
+        btnRegistroProf.setEnabled(false);
+        btnRegistroProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroProfActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Calificaciones");
 
         jLabel2.setText("Registro de Profesores");
-
-        jButton1.setText("Editar Porcentajes de cortes");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -85,10 +89,6 @@ public class Inicio extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnCalificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(62, 62, 62))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,9 +101,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel2))
-                .addGap(44, 44, 44)
-                .addComponent(jButton1)
-                .addGap(26, 26, 26))
+                .addGap(95, 95, 95))
         );
 
         jTabbedPane1.addTab("Menú", jPanel2);
@@ -113,7 +111,6 @@ public class Inicio extends javax.swing.JFrame {
 
         txtCorte1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        btnGuardarBien.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnGuardarBien.setText("Guardar");
         btnGuardarBien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,17 +209,13 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(txtCorte1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCorte3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCorte2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(btnGuardarBien)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tbtnEditBien)
-                        .addGap(8, 8, 8)))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tbtnEditBien)
+                    .addComponent(btnGuardarBien))
+                .addGap(8, 8, 8)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Bienvenido", jPanel1);
@@ -241,18 +234,6 @@ public class Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistroProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroProfMouseClicked
-        RegistroProfesor RegProf = new RegistroProfesor();
-        RegProf.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnRegistroProfMouseClicked
-
-    private void btnCalificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalificacionesMouseClicked
-        Calificaciones calif = new Calificaciones();
-        calif.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnCalificacionesMouseClicked
-
     private void btnGuardarBienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarBienActionPerformed
         double num;
         try {
@@ -260,7 +241,10 @@ public class Inicio extends javax.swing.JFrame {
             if (num > 0 && num == 100) {
                 calif.createP(new Materia(Double.parseDouble(txtCorte1.getText()), Double.parseDouble(txtCorte2.getText()), Double.parseDouble(txtCorte3.getText())));
                 calif.listarTablaCortes(jTable1);
+                borrar();
                 deshabilitBien(false);
+                btnCalificaciones.setEnabled(true);
+                btnRegistroProf.setEnabled(true);
             } else if (num > 100) {
                 JOptionPane.showMessageDialog(null, "La suma de porcentajes no puede ser mayor a 100%");
 
@@ -296,17 +280,40 @@ public class Inicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tbtnEditBienActionPerformed
 
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        calif.listarTablaCortes(jTable1);
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void btnRegistroProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroProfActionPerformed
+        Calificaciones calif = new Calificaciones();
+        calif.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegistroProfActionPerformed
+
+    private void btnCalificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalificacionesActionPerformed
+        RegistroProfesor RegProf = new RegistroProfesor();
+        RegProf.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCalificacionesActionPerformed
+
     public void DatosTxtField() {
         txtCorte1.setText(String.valueOf(calif.readP(num).getCorte1()));
         txtCorte2.setText(String.valueOf(calif.readP(num).getCorte2()));
         txtCorte3.setText(String.valueOf(calif.readP(num).getCorte3()));
     }
 
-    private void deshabilitBien(boolean v) {
+    public void deshabilitBien(boolean v) {
         btnGuardarBien.setEnabled(v);
         txtCorte1.setEnabled(v);
         txtCorte2.setEnabled(v);
         txtCorte3.setEnabled(v);
+    }
+
+    private void borrar() {
+        String borrar = "";
+        txtCorte1.setText(borrar);
+        txtCorte2.setText(borrar);
+        txtCorte3.setText(borrar);
     }
 
     public static void main(String args[]) {
@@ -343,10 +350,9 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCalificaciones;
+    public javax.swing.JButton btnCalificaciones;
     private javax.swing.JButton btnGuardarBien;
-    private javax.swing.JButton btnRegistroProf;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnRegistroProf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

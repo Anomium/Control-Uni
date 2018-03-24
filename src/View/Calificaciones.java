@@ -296,6 +296,9 @@ public class Calificaciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+        inicio.btnCalificaciones.setEnabled(true);
+        inicio.btnRegistroProf.setEnabled(true);
+        inicio.deshabilitBien(false);
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnInicioActionPerformed
@@ -332,6 +335,9 @@ public class Calificaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPromedioGenActionPerformed
 
     private void btnInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio2ActionPerformed
+        inicio.btnCalificaciones.setEnabled(true);
+        inicio.btnRegistroProf.setEnabled(true);
+        inicio.deshabilitBien(false);
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnInicio2ActionPerformed
