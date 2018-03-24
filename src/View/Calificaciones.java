@@ -328,7 +328,7 @@ public class Calificaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPromedioMatActionPerformed
 
     private void btnPromedioGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioGenActionPerformed
-        califco.Promedio();
+        califco.Promedio((String) cbMateriasPro.getSelectedItem());
     }//GEN-LAST:event_btnPromedioGenActionPerformed
 
     private void btnInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio2ActionPerformed
