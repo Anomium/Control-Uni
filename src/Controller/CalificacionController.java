@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import View.RegistroProfesor;
 import View.Inicio;
+
 public class CalificacionController {
 
     private static RegistroProfesor regprof = new RegistroProfesor();
     private static ArrayList<Calificacion> notas = new ArrayList<Calificacion>();
     private static ArrayList<Materia> porcentaje = new ArrayList<Materia>();
     private static Inicio inicio = new Inicio();
-    
+
     public void Create(Calificacion notasc) {
         notas.add(notasc);
     }
@@ -30,16 +31,16 @@ public class CalificacionController {
     public void update() {
 
     }
-    
-    public void updateP(int index,Materia mat, javax.swing.JTable jTable1) {
+
+    public void updateP(int index, Materia mat, javax.swing.JTable jTable1) {
         porcentaje.set(index, mat);
         listarTablaCortes(jTable1);
     }
-    
+
     public Materia readP(int index) {
         return porcentaje.get(index);
     }
-    
+
     public Calificacion read(int index) {
         return notas.get(index);
     }
@@ -66,16 +67,32 @@ public class CalificacionController {
 
     public void PreomedioMat(String materia) {
         double promMat = 0;
+        double[] vec = new double[3];
         int cont = 0;
-
+        int corte = 0;
         for (int i = 0; i < notas.size(); i++) {
-            if (notas.get(i).getMateria().getNombre_materia() == materia) {
-                promMat = promMat + notas.get(i).getNota();
-
+            if (notas.get(i).getMateria().getNombre_materia().equals(materia)) {
+                
+                System.out.println(notas.get(i).getNota());
+                switch(corte){
+                    case 0: 
+                        promMat = promMat + (notas.get(i).getNota() * (porcentaje.get(0).getCorte1() * 0.01));
+                        System.out.println(notas.get(i).getNota());
+                        break;
+                    case 1:
+                        promMat = promMat + (notas.get(i).getNota() * (porcentaje.get(0).getCorte2() * 0.01));
+                        //System.out.println(promMat);
+                        break;
+                    case 2: 
+                        promMat = promMat + (notas.get(i).getNota() * (porcentaje.get(0).getCorte3() * 0.01));
+                        //System.out.println(promMat);
+                        break;
+                }
+                corte++;
                 cont++;
             }
         }
-        promMat = promMat / cont;
+        promMat = promMat;
         JOptionPane.showMessageDialog(null, "La el promedio de la materia " + materia + " es: " + promMat);
     }
 
@@ -100,7 +117,6 @@ public class CalificacionController {
         JOptionPane.showMessageDialog(null, "El Promedio general es: " + prom);
         return prom;
     }
-    
 
     public void listarTablaCalificaciones(javax.swing.JTable jtCalificaciones) {
         Object[][] matriz = new Object[datosnotas().size()][2];
@@ -140,7 +156,7 @@ public class CalificacionController {
             matriz[i][2] = porcentaje.get(i).getCorte3();
         }
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel( 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 matriz,
                 new String[]{
                     "Primer Corte", "Segundo Corte", "Tercer Corte"
@@ -156,7 +172,6 @@ public class CalificacionController {
         });
 
         jTable1.getTableHeader().setReorderingAllowed(false);
-
 
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
