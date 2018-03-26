@@ -488,13 +488,12 @@ public class RegistroProfesor extends javax.swing.JFrame {
 
     private void btnGuardarRegProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRegProfActionPerformed
         datproco.Create(new DatosProfesor(txtNombreRegProf.getText(), txtCorreoProf.getText(), txtCelProf.getText()),jTable);
-        txtNombreRegProf.setText("");
-        txtCorreoProf.setText("");
-        txtCelProf.setText("");
+        borrarProf();
     }//GEN-LAST:event_btnGuardarRegProfActionPerformed
 
     private void btnGuardarRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRegMatActionPerformed
         matco.Create(new Materia(Integer.parseInt(txtCodigoRegMat.getText()), txtNombreRegMat.getText(), Integer.parseInt(txtCreditoRegMat.getText()),datproco.DatosProfesors().get(cbProfesorRegMat.getSelectedIndex()), txtNombreRegMat.getText(), (String) cbHoraRegMat.getSelectedItem(), (String) cbHoraRegMat1.getSelectedItem()), jTable2);
+        borrarMat();
     }//GEN-LAST:event_btnGuardarRegMatActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
@@ -534,7 +533,21 @@ public class RegistroProfesor extends javax.swing.JFrame {
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnInicioRegProfActionPerformed
-
+    
+    private void borrarMat(){
+        String t = "";
+        txtCodigoRegMat.setText(t);
+        txtCreditoRegMat.setText(t);
+        txtNombreRegMat.setText(t);
+        txtNombreRegProf.setText(t);
+    }
+    
+    private void borrarProf(){
+        txtNombreRegProf.setText("");
+        txtCorreoProf.setText("");
+        txtCelProf.setText("");
+    }
+    
     public int tama(){
         int tam = cbProfesorRegMat.getItemCount();
         return tam;

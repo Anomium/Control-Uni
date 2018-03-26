@@ -306,8 +306,7 @@ public class Calificaciones extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         califco.Create(new Calificacion(Double.parseDouble(txtCalificacion.getText()), matco.Materia().get(cbMaterias.getSelectedIndex())));
         califco.listarTablaCalificaciones(jtCalificaciones);
-        
-        
+        txtCalificacion.setText("");
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void jtCalificacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtCalificacionesMouseClicked

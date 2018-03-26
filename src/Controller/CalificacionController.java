@@ -68,7 +68,6 @@ public class CalificacionController {
     public void PreomedioMat(String materia) {
         double promMat = 0;
         double[] vec = new double[3];
-        int cont = 0;
         int corte = 0;
         for (int i = 0; i < notas.size(); i++) {
             if (notas.get(i).getMateria().getNombre_materia().equals(materia)) {
@@ -89,7 +88,6 @@ public class CalificacionController {
                         break;
                 }
                 corte++;
-                cont++;
             }
         }
         promMat = promMat;
