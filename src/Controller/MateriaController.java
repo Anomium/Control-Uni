@@ -39,7 +39,7 @@ public class MateriaController {
         for (int i = 0; i < Materia().size(); i++) {
             matriz[i][0] = Materia().get(i).getIndex();
             matriz[i][1] = Materia().get(i).getNombre_materia();
-            matriz[i][2] = Materia().get(i).getHoraS();
+            matriz[i][2] = Materia().get(i).getCredito();
             matriz[i][3] = Materia().get(i).getSalon_clases();
             matriz[i][4] = Materia().get(i).getDprof().getNombre();
             matriz[i][5] = Materia().get(i).getHoraE();

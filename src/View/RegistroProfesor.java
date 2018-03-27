@@ -539,7 +539,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
         txtCodigoRegMat.setText(t);
         txtCreditoRegMat.setText(t);
         txtNombreRegMat.setText(t);
-        txtNombreRegProf.setText(t);
+        txtSalonRegMat.setText(t);
     }
     
     private void borrarProf(){

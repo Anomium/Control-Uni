@@ -67,14 +67,14 @@ public class CalificacionController {
 
     public void PreomedioMat(String materia) {
         double promMat = 0;
-        double[] vec = new double[3];
+        double[] vec = new double[100];
         int corte = 0;
         for (int i = 0; i < notas.size(); i++) {
             if (notas.get(i).getMateria().getNombre_materia().equals(materia)) {
-                
+
                 System.out.println(notas.get(i).getNota());
-                switch(corte){
-                    case 0: 
+                switch (corte) {
+                    case 0:
                         promMat = promMat + (notas.get(i).getNota() * (porcentaje.get(0).getCorte1() * 0.01));
                         System.out.println(notas.get(i).getNota());
                         break;
@@ -82,38 +82,50 @@ public class CalificacionController {
                         promMat = promMat + (notas.get(i).getNota() * (porcentaje.get(0).getCorte2() * 0.01));
                         //System.out.println(promMat);
                         break;
-                    case 2: 
+                    case 2:
                         promMat = promMat + (notas.get(i).getNota() * (porcentaje.get(0).getCorte3() * 0.01));
                         //System.out.println(promMat);
                         break;
                 }
                 corte++;
             }
+
         }
-        promMat = promMat;
+
         JOptionPane.showMessageDialog(null, "La el promedio de la materia " + materia + " es: " + promMat);
     }
 
-    public double Promedio(String materia) {
+    public void Promedio(String materia) {
         double prom = 0;
-        double[] vec = new double[regprof.tama()];
-        int cont = 0;
-        int credito = 0;
-        for (int i = 0; i < regprof.tama(); i++) {
-            for (int j = 0; j < notas.size(); j++) {
-                if (notas.get(i).getMateria().getNombre_materia() == materia) {
-                    prom = prom + notas.get(i).getNota();
-                    cont += 1;
+        double[] vec = new double[3];
+        int corte = 0;
+        for (int i = 0; i < notas.size(); i++) {
+            if (notas.get(i).getMateria().getNombre_materia().equals(materia)) {
+
+                System.out.println(notas.get(i).getNota());
+                switch (corte) {
+                    case 0:
+                        prom = prom + (notas.get(i).getNota() * (porcentaje.get(0).getCorte1() * 0.01));
+                        System.out.println(notas.get(i).getNota());
+                        break;
+                    case 1:
+                        prom = prom + (notas.get(i).getNota() * (porcentaje.get(0).getCorte2() * 0.01));
+                        //System.out.println(promMat);
+                        break;
+                    case 2:
+                        prom = prom + (notas.get(i).getNota() * (porcentaje.get(0).getCorte3() * 0.01));
+                        //System.out.println(promMat);
+                        break;
                 }
-
+                corte++;
             }
-            vec[i] = prom * credito;
+            vec[i] = prom * porcentaje.get(i).getCredito();
         }
-
-        prom = prom / cont;
-        System.out.println(prom);
-        JOptionPane.showMessageDialog(null, "El Promedio general es: " + prom);
-        return prom;
+        for (int i = 0; i < vec.length; i++) {
+            prom = vec[i];
+        }
+        prom = prom;
+        JOptionPane.showMessageDialog(null, "La el promedio de la materia " + materia + " es: " + prom);
     }
 
     public void listarTablaCalificaciones(javax.swing.JTable jtCalificaciones) {
