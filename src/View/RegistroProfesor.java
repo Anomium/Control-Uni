@@ -63,7 +63,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
         txtSalonRegMat = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtCreditoRegMat = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnCancelarRegMat = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         cbHoraRegMat1 = new javax.swing.JComboBox<>();
 
@@ -90,6 +90,8 @@ public class RegistroProfesor extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnGuardarRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnGuardarRegProf.setText("Guardar");
         btnGuardarRegProf.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +99,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
                 btnGuardarRegProfActionPerformed(evt);
             }
         });
+        jPanel1.add(btnGuardarRegProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 28, 84, -1));
 
         btnEditarRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnEditarRegProf.setText("Editar");
@@ -105,6 +108,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
                 btnEditarRegProfActionPerformed(evt);
             }
         });
+        jPanel1.add(btnEditarRegProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 65, 84, -1));
 
         btnEliminarRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnEliminarRegProf.setText("Eliminar");
@@ -113,6 +117,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
                 btnEliminarRegProfActionPerformed(evt);
             }
         });
+        jPanel1.add(btnEliminarRegProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 102, 84, -1));
 
         btnInicioRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnInicioRegProf.setText("Inicio");
@@ -121,21 +126,28 @@ public class RegistroProfesor extends javax.swing.JFrame {
                 btnInicioRegProfActionPerformed(evt);
             }
         });
+        jPanel1.add(btnInicioRegProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 176, 84, -1));
 
         txtCelProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel1.add(txtCelProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 162, 185, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setText("Cel / telf:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 164, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel2.setText("Correo:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 117, -1, -1));
 
         txtCorreoProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel1.add(txtCorreoProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 115, 275, -1));
 
         txtNombreRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel1.add(txtNombreRegProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 65, 275, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel1.setText("Nombre:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 67, -1, -1));
 
         jTable.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -171,75 +183,11 @@ public class RegistroProfesor extends javax.swing.JFrame {
             jTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 277, 549, 150));
+
         jButton2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jButton2.setText("Cancelar");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnGuardarRegProf, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(42, 42, 42))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel3))
-                                    .addGap(43, 43, 43)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtNombreRegProf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCorreoProf, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCelProf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addGap(148, 148, 148)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnEliminarRegProf, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                                        .addComponent(btnEditarRegProf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnInicioRegProf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(btnGuardarRegProf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombreRegProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCorreoProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCelProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnEditarRegProf)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEliminarRegProf)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnInicioRegProf)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-        );
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 139, -1, -1));
 
         jTabbedPane1.addTab("Registro Profesor", jPanel1);
 
@@ -341,8 +289,13 @@ public class RegistroProfesor extends javax.swing.JFrame {
 
         txtCreditoRegMat.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton1.setText("Cancelar");
+        btnCancelarRegMat.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnCancelarRegMat.setText("Cancelar");
+        btnCancelarRegMat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarRegMatActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel10.setText("Salida:");
@@ -396,7 +349,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
                                 .addComponent(cbHoraRegMat1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCancelarRegMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEliminarRegMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEditarRegMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnGuardarRegMat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -445,7 +398,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminarRegMat)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(btnCancelarRegMat)
                         .addGap(18, 18, 18)
                         .addComponent(btnInicioRegMat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -492,7 +445,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarRegProfActionPerformed
 
     private void btnGuardarRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRegMatActionPerformed
-        matco.Create(new Materia(Integer.parseInt(txtCodigoRegMat.getText()), txtNombreRegMat.getText(), Integer.parseInt(txtCreditoRegMat.getText()),datproco.DatosProfesors().get(cbProfesorRegMat.getSelectedIndex()), txtNombreRegMat.getText(), (String) cbHoraRegMat.getSelectedItem(), (String) cbHoraRegMat1.getSelectedItem()), jTable2);
+        matco.Create(new Materia(Integer.parseInt(txtCodigoRegMat.getText()), txtNombreRegMat.getText(), Integer.parseInt(txtCreditoRegMat.getText()),datproco.DatosProfesors().get(cbProfesorRegMat.getSelectedIndex()), txtSalonRegMat.getText(), (String) cbHoraRegMat.getSelectedItem(), (String) cbHoraRegMat1.getSelectedItem()), jTable2);
         borrarMat();
     }//GEN-LAST:event_btnGuardarRegMatActionPerformed
 
@@ -500,7 +453,12 @@ public class RegistroProfesor extends javax.swing.JFrame {
         index_regmat = jTable2.getSelectedRow();
         
         txtNombreRegMat.setText(matco.read(index_regmat).getNombre_materia());
-        
+        txtCreditoRegMat.setText(String.valueOf(matco.read(index_regmat).getCredito()));
+        txtCodigoRegMat.setText(String.valueOf(matco.read(index_regmat).getIndex()));
+        txtSalonRegMat.setText(matco.read(index_regmat).getSalon_clases());
+        cbProfesorRegMat.setSelectedItem(matco.read(index_regmat).getDprof().getNombre());
+        cbHoraRegMat.setSelectedItem(matco.read(index_regmat).getHoraE());
+        cbHoraRegMat1.setSelectedItem(matco.read(index_regmat).getHoraS());
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void btnInicioRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioRegMatActionPerformed
@@ -533,6 +491,10 @@ public class RegistroProfesor extends javax.swing.JFrame {
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnInicioRegProfActionPerformed
+
+    private void btnCancelarRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarRegMatActionPerformed
+        borrarMat();
+    }//GEN-LAST:event_btnCancelarRegMatActionPerformed
     
     private void borrarMat(){
         String t = "";
@@ -554,6 +516,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelarRegMat;
     private javax.swing.JButton btnEditarRegMat;
     private javax.swing.JButton btnEditarRegProf;
     private javax.swing.JButton btnEliminarRegMat;
@@ -565,7 +528,6 @@ public class RegistroProfesor extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbHoraRegMat;
     private javax.swing.JComboBox<String> cbHoraRegMat1;
     private javax.swing.JComboBox<String> cbProfesorRegMat;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

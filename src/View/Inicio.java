@@ -50,6 +50,8 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnCalificaciones.setForeground(new java.awt.Color(255, 255, 255));
         btnCalificaciones.setEnabled(false);
         btnCalificaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +59,7 @@ public class Inicio extends javax.swing.JFrame {
                 btnCalificacionesActionPerformed(evt);
             }
         });
+        jPanel2.add(btnCalificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 90, 89, 50));
 
         btnRegistroProf.setEnabled(false);
         btnRegistroProf.addActionListener(new java.awt.event.ActionListener() {
@@ -64,41 +67,13 @@ public class Inicio extends javax.swing.JFrame {
                 btnRegistroProfActionPerformed(evt);
             }
         });
+        jPanel2.add(btnRegistroProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 87, 50));
 
         jLabel5.setText("Calificaciones");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 165, -1, -1));
 
         jLabel2.setText("Registro de Profesores");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(33, 33, 33))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(btnCalificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegistroProf, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCalificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistroProf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel2))
-                .addGap(95, 95, 95))
-        );
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 165, -1, -1));
 
         jTabbedPane1.addTab("Menú", jPanel2);
 

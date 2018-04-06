@@ -330,7 +330,7 @@ public class Calificaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPromedioMatActionPerformed
 
     private void btnPromedioGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromedioGenActionPerformed
-        califco.Promedio((String) cbMateriasPro.getSelectedItem());
+        califco.Promedio();
     }//GEN-LAST:event_btnPromedioGenActionPerformed
 
     private void btnInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio2ActionPerformed
@@ -350,8 +350,8 @@ public class Calificaciones extends javax.swing.JFrame {
     private javax.swing.JButton btnInicio2;
     private javax.swing.JButton btnPromedioGen;
     private javax.swing.JButton btnPromedioMat;
-    public javax.swing.JComboBox<String> cbMaterias;
-    private javax.swing.JComboBox<String> cbMateriasPro;
+    private javax.swing.JComboBox<String> cbMaterias;
+    public static javax.swing.JComboBox<String> cbMateriasPro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
