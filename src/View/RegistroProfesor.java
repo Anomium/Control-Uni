@@ -1,16 +1,20 @@
 package View;
+
 import Controller.DatosProfController;
 import Model.DatosProfesor;
 import Controller.MateriaController;
 import Model.Materia;
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+
 public class RegistroProfesor extends javax.swing.JFrame {
-    
+
     Inicio inicio = new Inicio();
     private static MateriaController matco = new MateriaController();
     private static DatosProfController datproco = new DatosProfController();
     int index_regprof;
     int index_regmat;
+
     public RegistroProfesor() {
         initComponents();
         setLocationRelativeTo(null);
@@ -18,10 +22,8 @@ public class RegistroProfesor extends javax.swing.JFrame {
         setTitle("Registro de Profesor");
         datproco.listarTablaDatosProf(jTable);
         matco.ListarTabla(jTable2);
-        
+
     }
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -129,6 +131,11 @@ public class RegistroProfesor extends javax.swing.JFrame {
         jPanel1.add(btnInicioRegProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 176, 84, -1));
 
         txtCelProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCelProf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCelProfKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtCelProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 162, 185, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -140,9 +147,19 @@ public class RegistroProfesor extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 117, -1, -1));
 
         txtCorreoProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCorreoProf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCorreoProfKeyPressed(evt);
+            }
+        });
         jPanel1.add(txtCorreoProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 115, 275, -1));
 
         txtNombreRegProf.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtNombreRegProf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreRegProfKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtNombreRegProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 65, 275, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -264,6 +281,11 @@ public class RegistroProfesor extends javax.swing.JFrame {
         jLabel4.setText("Nombre Materia:");
 
         txtNombreRegMat.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtNombreRegMat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreRegMatKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel5.setText("Codigo Clase:");
@@ -288,6 +310,11 @@ public class RegistroProfesor extends javax.swing.JFrame {
         jLabel9.setText("Credito:");
 
         txtCreditoRegMat.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCreditoRegMat.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCreditoRegMatKeyTyped(evt);
+            }
+        });
 
         btnCancelarRegMat.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnCancelarRegMat.setText("Cancelar");
@@ -424,8 +451,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
         this.index_regprof = jTable.getSelectedRow();
-        
-                
+
         txtNombreRegProf.setText(datproco.read(index_regprof).getNombre());
         txtCorreoProf.setText(datproco.read(index_regprof).getCorreo());
         txtCelProf.setText(datproco.read(index_regprof).getNumeroCel());
@@ -436,22 +462,22 @@ public class RegistroProfesor extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarRegProfActionPerformed
 
     private void btnEditarRegProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarRegProfActionPerformed
-        datproco.update(new DatosProfesor(txtNombreRegProf.getText(), txtCorreoProf.getText(), txtCelProf.getText()), index_regprof, jTable);    
+        datproco.update(new DatosProfesor(txtNombreRegProf.getText(), txtCorreoProf.getText(), txtCelProf.getText()), index_regprof, jTable);
     }//GEN-LAST:event_btnEditarRegProfActionPerformed
 
     private void btnGuardarRegProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRegProfActionPerformed
-        datproco.Create(new DatosProfesor(txtNombreRegProf.getText(), txtCorreoProf.getText(), txtCelProf.getText()),jTable);
+        datproco.Create(new DatosProfesor(txtNombreRegProf.getText(), txtCorreoProf.getText(), txtCelProf.getText()), jTable);
         borrarProf();
     }//GEN-LAST:event_btnGuardarRegProfActionPerformed
 
     private void btnGuardarRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRegMatActionPerformed
-        matco.Create(new Materia(Integer.parseInt(txtCodigoRegMat.getText()), txtNombreRegMat.getText(), Integer.parseInt(txtCreditoRegMat.getText()),datproco.DatosProfesors().get(cbProfesorRegMat.getSelectedIndex()), txtSalonRegMat.getText(), (String) cbHoraRegMat.getSelectedItem(), (String) cbHoraRegMat1.getSelectedItem()), jTable2);
+        matco.Create(new Materia(Integer.parseInt(txtCodigoRegMat.getText()), txtNombreRegMat.getText(), Integer.parseInt(txtCreditoRegMat.getText()), datproco.DatosProfesors().get(cbProfesorRegMat.getSelectedIndex()), txtSalonRegMat.getText(), (String) cbHoraRegMat.getSelectedItem(), (String) cbHoraRegMat1.getSelectedItem()), jTable2);
         borrarMat();
     }//GEN-LAST:event_btnGuardarRegMatActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         index_regmat = jTable2.getSelectedRow();
-        
+
         txtNombreRegMat.setText(matco.read(index_regmat).getNombre_materia());
         txtCreditoRegMat.setText(String.valueOf(matco.read(index_regmat).getCredito()));
         txtCodigoRegMat.setText(String.valueOf(matco.read(index_regmat).getIndex()));
@@ -479,7 +505,7 @@ public class RegistroProfesor extends javax.swing.JFrame {
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         cbProfesorRegMat.removeAllItems();
-        for(DatosProfesor dat : datproco.DatosProfesors()){
+        for (DatosProfesor dat : datproco.DatosProfesors()) {
             cbProfesorRegMat.addItem(dat.getNombre());
         }
     }//GEN-LAST:event_jTabbedPane1MouseClicked
@@ -495,22 +521,73 @@ public class RegistroProfesor extends javax.swing.JFrame {
     private void btnCancelarRegMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarRegMatActionPerformed
         borrarMat();
     }//GEN-LAST:event_btnCancelarRegMatActionPerformed
-    
-    private void borrarMat(){
+
+    private void txtCreditoRegMatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCreditoRegMatKeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCreditoRegMatKeyTyped
+
+    private void txtCelProfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelProfKeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCelProfKeyTyped
+
+    private void txtNombreRegProfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreRegProfKeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+        if (!Character.isLetter(c) && c != KeyEvent.VK_SPACE) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombreRegProfKeyTyped
+
+    private void txtCorreoProfKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoProfKeyPressed
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+        if (!Character.isLetter(c) && c != KeyEvent.VK_SPACE) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCorreoProfKeyPressed
+
+    private void txtNombreRegMatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreRegMatKeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+        if (!Character.isLetter(c) && c != KeyEvent.VK_SPACE) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombreRegMatKeyTyped
+
+    private void borrarMat() {
         String t = "";
         txtCodigoRegMat.setText(t);
         txtCreditoRegMat.setText(t);
         txtNombreRegMat.setText(t);
         txtSalonRegMat.setText(t);
     }
-    
-    private void borrarProf(){
+
+    private void borrarProf() {
         txtNombreRegProf.setText("");
         txtCorreoProf.setText("");
         txtCelProf.setText("");
     }
-    
-    public int tama(){
+
+    public int tama() {
         int tam = cbProfesorRegMat.getItemCount();
         return tam;
     }

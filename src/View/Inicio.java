@@ -81,6 +81,11 @@ public class Inicio extends javax.swing.JFrame {
         jLabel1.setText("Porcentajes de cortes");
 
         txtCorte1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCorte1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorte1KeyTyped(evt);
+            }
+        });
 
         btnGuardarBien.setText("Guardar");
         btnGuardarBien.addActionListener(new java.awt.event.ActionListener() {
@@ -119,8 +124,18 @@ public class Inicio extends javax.swing.JFrame {
         }
 
         txtCorte3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCorte3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorte3KeyTyped(evt);
+            }
+        });
 
         txtCorte2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCorte2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorte2KeyTyped(evt);
+            }
+        });
 
         jLabel3.setText("Primer Corte:");
 
@@ -266,6 +281,33 @@ public class Inicio extends javax.swing.JFrame {
         RegProf.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCalificacionesActionPerformed
+
+    private void txtCorte1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorte1KeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCorte1KeyTyped
+
+    private void txtCorte2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorte2KeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCorte2KeyTyped
+
+    private void txtCorte3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorte3KeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCorte3KeyTyped
 
     public void DatosTxtField() {
         txtCorte1.setText(String.valueOf(calif.readP(num).getCorte1()));

@@ -106,6 +106,11 @@ public class Calificaciones extends javax.swing.JFrame {
         }
 
         txtCalificacion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtCalificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCalificacionKeyTyped(evt);
+            }
+        });
 
         cbMaterias.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
@@ -340,6 +345,15 @@ public class Calificaciones extends javax.swing.JFrame {
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnInicio2ActionPerformed
+
+    private void txtCalificacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalificacionKeyTyped
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCalificacionKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
